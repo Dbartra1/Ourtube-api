@@ -1,2 +1,2 @@
 # Ourtube
-Youtube Downloading application 
+Youtube utility 
