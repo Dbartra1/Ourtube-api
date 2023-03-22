@@ -3,35 +3,85 @@ import urllib.request
 from PIL import Image
 from pathlib import Path
 
-## Finding users download path
+string = input("What are you looking for?: ")
 
-downloads_path = str(Path.home() / "Downloads")
+def Find(string): 
+    x = string.split()
+    res = []
+    for i in x: 
+        if i.startswith("https:") or i.startswith("http:"):
+            res.append(i)
+    return res
 
-## Pulling a video and it's information via a implicit URL
+def YTsearch(string):
+    ser = YouTube(string)
+    
 
-yt = YouTube(input("enter url:"))
-title = yt.title
-print (title)
 
-## Stream downloading test 
+def YTurl(res): 
+    yt = Youtube(res)
 
-yt.streams
 
-stream = yt.streams.get_highest_resolution()
 
-stream.download()
 
-# ## Using the search module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ## Finding users download path
+
+# downloads_path = str(Path.home() / "Downloads")
+
+# ## Pulling a video and it's information via a implicit URL
+
+# yt = YouTube(input("enter url:"))
+
+# title = yt.title
+# print (title)
+
+# ## Stream downloading test 
+
+# yt.streams
+
+# stream = yt.streams.get_highest_resolution()
+
+#stream.download()
+
+## Using the search module
 
 # s = Search(input("What do you want?: "))
-# print ("There were", len(s.results), "results found") 
-# print (s.results)
+# results = s.results
+
+# for (i, item) in enumerate(results, start=0):
+#     print(i, item)
+
+# print ("There were", len(results), "results found") 
+# print (results)
 # x = input("Did you find what you were looking for?: ")
 # if x == "no":
 #     s.get_next_results()
-#     print ("There were", len(s.results), " additional results found") 
+#     print ("There were", len(results), " additional results found") 
 # else: 
-#     print ("thanks for using the thing, goodbye!")
+#     print ("thanks for using the thing, goodbye!") 
 
 # ##creating an object with the video ID
 
